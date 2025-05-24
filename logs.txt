@@ -1,0 +1,6 @@
+2025-05-25 01:12:41 [INFO]: This is message
+2025-05-25 01:12:41 [ERROR]: Something bad happened!
+2025-05-25 01:12:41 [WARNING]: this is waring message
+2025-05-25 01:12:53 [INFO]: This is message
+2025-05-25 01:12:53 [ERROR]: Something bad happened!
+2025-05-25 01:12:53 [WARNING]: this is waring message
