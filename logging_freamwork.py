@@ -24,8 +24,8 @@ class Formatter(ABC):
   def __init__(self):
     pass
   
-  def format(self, message: Log):
-    pass
+  def format(self, message: Log) -> str:
+    return ""
   
 
 class SimpleFormatter(Formatter):
@@ -59,14 +59,15 @@ class ConsoleHandler(LogHandler):
     print(self.formatter.format(message))
 
 class FileHandler(LogHandler):
-  def __init__(self, filename: str):
+  def __init__(self, filename: str, formatter: Optional[Formatter] = None):
     self.filename = filename
     self.lock = Lock()
+    self.formatter = formatter or SimpleFormatter()
 
   def emit(self, message: Log):
     with self.lock:
       with open(self.filename, "a") as f:
-        f.write(str(message) + "\n")
+        f.write(self.formatter.format(message) + "\n")
 
 class Logger:
   def __init__(self, level: LogLevel):
@@ -95,7 +96,7 @@ if __name__ == "__main__":
   logger = Logger(LogLevel.INFO)
   print_handler = ConsoleHandler(formatter=JSONFormatter())
 #   print_handler2 = ConsoleHandler()
-  print_handler2 = FileHandler(filename="logs.txt")
+  print_handler2 = FileHandler(filename="logs.txt", formatter=JSONFormatter())
 
   logger.add_handler(print_handler)
   logger.add_handler(print_handler2)

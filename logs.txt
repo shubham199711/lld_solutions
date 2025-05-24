@@ -4,3 +4,9 @@
 2025-05-25 01:12:53 [INFO]: This is message
 2025-05-25 01:12:53 [ERROR]: Something bad happened!
 2025-05-25 01:12:53 [WARNING]: this is waring message
+{"datetime": "2025-05-25 01:20:38.197869", "level": "INFO", "message": "This is message"}
+{"datetime": "2025-05-25 01:20:38.198216", "level": "ERROR", "message": "Something bad happened!"}
+{"datetime": "2025-05-25 01:20:38.198304", "level": "WARNING", "message": "this is waring message"}
+{"datetime": "2025-05-25 01:21:07.322645", "level": "INFO", "message": "This is message"}
+{"datetime": "2025-05-25 01:21:07.322918", "level": "ERROR", "message": "Something bad happened!"}
+{"datetime": "2025-05-25 01:21:07.322978", "level": "WARNING", "message": "this is waring message"}
