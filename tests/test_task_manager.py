@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 from unittest.mock import MagicMock
-from apps.task_manager import User, DesignerTask, Project, NotificationService, TaskStatus
+from apps.task_manager import User, DesignerTask, Project, NotificationService, TaskStatus, TaskFactory, TaskType
 
 def test_assign_user_and_task():
     mock_notifier = MagicMock(spec=NotificationService)
@@ -36,3 +36,9 @@ def test_update_status_threads():
     assert task.status == TaskStatus.TODO
     task.update_status(TaskStatus.IN_PROGRESS)
     assert task.status == TaskStatus.IN_PROGRESS
+
+def test_verify_task_factory():
+    task_factory = TaskFactory()
+    task = task_factory.create_task(TaskType.DESIGN, "test", datetime.now() + timedelta(days=2))
+    assert task.status == TaskStatus.TODO
+    assert isinstance(task, DesignerTask)
