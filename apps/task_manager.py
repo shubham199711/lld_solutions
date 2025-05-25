@@ -52,7 +52,7 @@ class ConsoleNotificationService(NotificationService):
 class User:
     def __init__(self, name: str, notification_strategy: NotificationService):
         self.name = name
-        self.assigned_tasks = []
+        self.assigned_tasks: list[Task] = []
         self.notification_strategy = notification_strategy
 
     def assign_to(self, task: Task):
@@ -67,7 +67,7 @@ class DesignerTask(Task):
     def __init__(self, name: str, due_date: datetime):
         super().__init__(name, due_date)
         self.status = TaskStatus.TODO
-        self.assigned_to = []
+        self.assigned_to: list[User] = []
         self.lock = Lock()
 
     def assign_to(self, user: User):

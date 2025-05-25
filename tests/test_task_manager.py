@@ -1,5 +1,7 @@
 from datetime import datetime, timedelta
 from unittest.mock import MagicMock
+
+import pytest
 from apps.task_manager import (
     User,
     DesignerTask,
@@ -56,3 +58,8 @@ def test_verify_task_factory():
     )
     assert task.status == TaskStatus.TODO
     assert isinstance(task, DesignerTask)
+
+def test_task_factory_unknown_type():
+    task_factory = TaskFactory()
+    with pytest.raises(ValueError):
+        task_factory.create_task(TaskType.FRONT_END, "test", datetime.now() + timedelta(days=2))
