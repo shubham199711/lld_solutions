@@ -1,0 +1,12 @@
+{"message":"This is message 2","loglevel":ERROR,"time":"2025-10-26 01:24:59"}
+{"message":"This is message 1","loglevel":WARN,"time":"2025-10-26 01:24:59"}
+{"message":"This is message 1","loglevel":DEBUG,"time":"2025-10-26 01:24:59"}
+2025-10-26 01:25:24 [ERROR] :This is message 2
+2025-10-26 01:25:24 [WARN] :This is message 1
+2025-10-26 01:25:24 [DEBUG] :This is message 1
+2025-10-26 01:25:42 [ERROR] : This is message 2
+2025-10-26 01:25:42 [WARN] : This is message 1
+2025-10-26 01:25:42 [DEBUG] : This is message 1
+2025-10-26 01:25:56 [ERROR]: This is message 2
+2025-10-26 01:25:56 [WARN]: This is message 1
+2025-10-26 01:25:56 [DEBUG]: This is message 1
